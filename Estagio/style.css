@@ -1,34 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400,700&display=swap');
 
+.MainColor{
+    --font-geral: #6E57E0;
+    --font-geralHover: #343a40;
+
+
+    --dark-font-geral: #fff700;
+    --font-geral-label: whitesmoke;
+     /*--Geral: rgb(255, 136, 0);*/
+    /*--GeralHover: rgb(179, 108, 28); /*LARANJAAAA */
+    /**VARIAVEL DE CORES TEMAS SÓ COMENTAR PRA FICAR ALTERANDO ENTRE AS CORES***/
+}
+
+:root
+{
+    --bg-light: #f8f9fa;
+    --dark-card-color: #100c08;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif;;
 }
 
 body {
-    background: #f8f9fa;
-    padding: 0 10px;
+    transition: 0.75s;
+    background: var(--bg-light);
+}
+
+body ::selection{
+    background-color: var(--font-geral);
+    color: white;
 }
 
 .wrapper {
-    max-width: 550px;
+    max-width: 500px;
     width: 100%;
-    background: #FFFFFF;
-    margin: 50px auto;
+    margin: 0 auto;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
     padding: 30px;
+    border-radius: 5px;
+    transition: 0.75s;
 }
 
-.wrapper .title {
+section.dark .wrapper{
+    transition: 0.75s;
+    background: var(--dark-card-color);
+    color: whitesmoke;
+}
+
+
+.wrapper .title 
+{
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 25px;
-    color: slateblue;
+    color: var(--font-geral);
     text-transform: uppercase;
     text-align: center;
+    text-decoration: none;
 }
 
 .wrapper .form {
@@ -50,17 +82,18 @@ body {
 
 .wrapper .form .inputfield .input,
 .wrapper .form .inputfield .textarea {
-    width: 100%;
+    width: 98%;
     outline: none;
     border: 1px solid #d5dbd9;
     font-size: 15px;
     padding: 8px 10px;
     border-radius: 3px;
     transition: all 0.3s ease;
+    background: transparent;
 }
 
 .wrapper .form .inputfield .textarea {
-    width: 100%;
+    width: 98%;
     height: 125px;
     resize: none;
 }
@@ -93,13 +126,16 @@ body {
     font-size: 15px;
     border: 1px solid #d5dbd9;
     border-radius: 3px;
+    color: #757575;
+    background: transparent;
 }
 
 
 .wrapper .form .inputfield .input:focus,
 .wrapper .form .inputfield .textarea:focus,
 .wrapper .form .inputfield .custom_select select:focus {
-    border: 1px solid slateblue;
+    border: 1px solid var(--font-geral);
+    outline: none;
 }
 
 .wrapper .form .inputfield p {
@@ -107,64 +143,72 @@ body {
     color: #757575;
 }
 
-.wrapper .form .inputfield .check {
-    width: 15px;
-    height: 15px;
-    position: relative;
-    display: block;
-    cursor: pointer;
-}
-
-.wrapper .form .inputfield .check input[type="checkbox"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-
-.wrapper .form .inputfield .check .checkmark {
-    width: 15px;
-    height: 15px;
-    border: 1px solid slateblue;
-    display: block;
-    position: relative;
-}
-
-.wrapper .form .inputfield .check .checkmark:before {
-    content: "";
-    position: absolute;
-    top: 1px;
-    left: 2px;
-    width: 5px;
-    height: 2px;
-    border: 2px solid;
-    border-color: transparent transparent #fff #fff;
-    transform: rotate(-45deg);
-    display: none;
-}
-
-.wrapper .form .inputfield .check input[type="checkbox"]:checked~.checkmark {
-    background: slateblue;
-}
-
-.wrapper .form .inputfield .check input[type="checkbox"]:checked~.checkmark:before {
-    display: block;
-}
-
-.wrapper .form .inputfield .btn {
-    width: 100%;
+.wrapper .form .inputfield .btn{
+    width: 450px;
+    margin: auto;
+    margin-top: 10px;
     padding: 8px 10px;
     font-size: 15px;
     border: 0px;
-    background: slateblue;
+    background: var(--font-geral);;
     color: #fff;
     cursor: pointer;
     border-radius: 3px;
     outline: none;
 }
 
+.wrapper .form .inputfield .btns{
+    width: 150px;
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 8px 10px;
+    font-size: 15px;
+    border: 0px;
+    background: var(--font-geral);;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+}
+
+.lin{
+    color: var(--font-geral);;
+    max-width: 500px;
+    width: 100%;
+    margin: 60px auto 0;
+    padding: 0;
+    border-radius: 5px;   
+}
+
+.linter{
+    background: white;
+    max-width: max-content;
+    width: 100%;
+    color: var(--font-geral);
+    box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.75s;
+}
+
+section.dark .linter{
+    transition: 0.75s;
+    background: #151f2e;
+}
+
+a:hover{
+    color: var(--font-geralHover);
+}
+
 .wrapper .form .inputfield .btn:hover {
-    background: slateblue;
+    transition: 0.75s;
+    background: var(--font-geralHover);
+}
+
+.wrapper .form .inputfield .btns:hover {
+    transition: 0.75s;
+    background: var(--font-geralHover);
 }
 
 .wrapper .form .inputfield:last-child {
@@ -185,32 +229,39 @@ body {
         flex-direction: row;
     }
 }
-/* 
-.grid 
+
+
+.toggle
 {
-    max-width: 1000px;
-    width: 100%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
     background: #FFFFFF;
-    margin: 50px auto;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-    padding: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
-.grid .title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    color: slateblue;
-    text-transform: uppercase;
-    text-align: center;
+section.dark .toggle
+{
+    /* background: #404852; */
+    background: #151f2e;
 }
 
- 
-.my-row {
-    border: 3px solid darkslategrey;
-    height: 300px;
+.toggle:before
+{
+    content: '\f186';
+    font-family: fontAwesome;
+    color: black;
+
 }
-/* 
-.my-col {
-    border: 2px solid darkslategrey;
-}  */ 
+
+section.dark .toggle:before
+{
+    content: '\f185';
+    color: whitesmoke;   
+}
