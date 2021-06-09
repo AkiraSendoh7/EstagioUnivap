@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!--==================== UNICONS ====================-->
-
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    
+    <!--========== BOX ICONS ==========-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
     <!--==================== SWIPER CSS ====================-->
     <link rel="stylesheet" href="">
@@ -20,7 +23,7 @@
 <body>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
-        <nav class="nav content">
+        <nav class="nav container">
             <a href="" class="nav__logo">Colégios Univap</a>
 
             <div class="nav__menu" id="nav-menu">
@@ -41,28 +44,14 @@
 
                     <li class="nav__item">
                         <a href="#register" class="nav__link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                class="bi bi-journals nav__icon" viewBox="0 0 16 16">
-                                <path
-                                    d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2 2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v9a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2z" />
-                                <path
-                                    d="M1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 2.5v.5H.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1H2v-.5a.5.5 0 0 0-1 0z" />
-                            </svg>
+                            <i class='bx bx-spreadsheet bx-sm'></i>
                             Centro de Custos
                         </a>
                     </li>
 
                     <li class="nav__item">
                         <a href="#register" class="nav__link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                class="bi bi-journal-bookmark nav__icon" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8z" />
-                                <path
-                                    d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
-                                <path
-                                    d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
-                            </svg>
+                            <i class='bx bx-buildings bx-sm'></i>
                             Departamentos
                         </a>
                     </li>
@@ -123,7 +112,23 @@
     <main class="main">
         <!--==================== HOME ====================-->
         <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__content grid">
+                    <div class="home__social">
+                        <a href="" class="home__social-icon">
+                            <i class='bx bxl-github'></i>
+                        </a>
 
+                        <a href="" class="home__social-icon">
+                            <i class='bx bxl-github'></i>
+                        </a>
+
+                        <a href="" class="home__social-icon">
+                            <i class='bx bxl-github'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!--==================== ABOUT ====================-->
@@ -188,7 +193,7 @@
     <script src=""></script>
 
     <!--==================== MAIN JS ====================-->
-    <script src=""></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
