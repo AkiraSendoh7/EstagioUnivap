@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="">
 
     <!--==================== CSS ====================-->
-    <link rel="stylesheet" href="\assets\css\style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style_centro-de-custo.css">
 
     <title>Centro de Custo</title>
 </head>
@@ -43,14 +44,14 @@
                     </li>
 
                     <li class="nav__item">
-                        <a href="#register" class="nav__link">
+                        <a href="#centrodecusto" class="nav__link">
                             <i class='bx bx-spreadsheet bx-sm'></i>
                             Centro de Custos
                         </a>
                     </li>
 
                     <li class="nav__item">
-                        <a href="#register" class="nav__link">
+                        <a href="#departamento" class="nav__link">
                             <i class='bx bx-buildings bx-sm'></i>
                             Departamentos
                         </a>
@@ -138,29 +139,327 @@
                             Site para manusear e manipular quando é necessário ocorrências e vistorias no departamento
                             ao qual foi pedido.
                         </p>
+                        <a href="#contact" class="button button--flex">
+                            Contate-nos <i class="uil uil-message button__icon"></i>
+                        </a>
+                    </div>
+                </div>
 
+                <div class="home__scroll">
+                    <a href="#about" class="home__scroll-button button--flex">
+                        <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+                        <span class="home__scroll-name">Role para baixo</span>
+                        <i class="uil uil-arrow-down home__scroll-arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== CENTRO DE CUSTO ====================-->
+        <section class="centro-de-custo section" id="centrodecusto">
+            <div class="wrapper">
+                <div class="title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-journal" viewBox="0 0 16 16">
+                        <path
+                            d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                        <path
+                            d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                    </svg>
+                    Centro de Custo
+                </div>
+
+                <div class="form">
+                    <div class="inputfield">
+                        <label>Campi: </label>
+                        <div class="custom_select">
+                            <select>
+                                <option value="">Selecione o código do campi</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="home__scroll">
-                        <a href="" class="home__scroll-button button--flex">
-                            <span class="home__scroll-name">Para baixo</span>
-                            <i class='uil uil-arrow-down home__scroll-arrow'></i>
+                    <div class="inputfield">
+                        <label>Centro de Custo: </label>
+                        <div class="custom_select">
+                            <select>
+                                <option value="">Selecione o código do centro de custo</option>
+                                <option value="010000">010000</option>
+                                <option value="011000">011000</option>
+                                <option value="011001">011001</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="inputfield form-group">
+                        <label for="">Descrição: </label>
+                        <span class="input-group-text" id="basic-addon1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="110" fill="currentColor"
+                                class="bi bi-keyboard" viewBox="0 0 16 16">
+                                <path
+                                    d="M14 5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h12zM2 4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z">
+                                </path>
+                                <path
+                                    d="M13 10.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm0-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5 0A.25.25 0 0 1 8.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 8 8.75v-.5zm2 0a.25.25 0 0 1 .25-.25h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5a.25.25 0 0 1-.25-.25v-.5zm1 2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5-2A.25.25 0 0 1 6.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 6 8.75v-.5zm-2 0A.25.25 0 0 1 4.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 4 8.75v-.5zm-2 0A.25.25 0 0 1 2.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 8.75v-.5zm11-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0A.25.25 0 0 1 9.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 9 6.75v-.5zm-2 0A.25.25 0 0 1 7.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 7 6.75v-.5zm-2 0A.25.25 0 0 1 5.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 5 6.75v-.5zm-3 0A.25.25 0 0 1 2.25 6h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5A.25.25 0 0 1 2 6.75v-.5zm0 4a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm2 0a.25.25 0 0 1 .25-.25h5.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-5.5a.25.25 0 0 1-.25-.25v-.5z">
+                                </path>
+                            </svg>
+                        </span>
+                        <textarea placeholder="Digite a descrição do departamento" class="textarea form-control"
+                            name="desc" id="desc" rows="3"></textarea>
+                    </div>
+
+                    <div class="inputfield">
+                        <label for="phone">Telefone: </label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="input"
+                            placeholder="Número de telefone">
+                    </div>
+
+                    <div class="inputfield">
+                        <button type="button" class="btn btn-primary">Gravar</button>
+                    </div>
+
+                    <div class="inputfield">
+                        <button type="button" class="btn btn-primary">Sair</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!--==================== DEPARTAMENTO ====================-->
+        <section class="departamento section" id="departamento">
+            <div class="wrapper">
+                <div class="title">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-house-door" viewBox="0 0 16 16">
+                        <path
+                            d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+                    </svg>
+                    Departamento
+                </div>
+
+                <div class="form">
+                    <div class="inputfield">
+                        <label>Campi: </label>
+                        <div class="custom_select">
+                            <select>
+                                <option value="">Selecione o código do campi</option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="inputfield form-group">
+                        <label for="">Descrição: </label>
+                        <span class="input-group-text" id="basic-addon1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="110" fill="currentColor"
+                                class="bi bi-keyboard" viewBox="0 0 16 16">
+                                <path
+                                    d="M14 5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h12zM2 4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z">
+                                </path>
+                                <path
+                                    d="M13 10.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm0-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5 0A.25.25 0 0 1 8.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 8 8.75v-.5zm2 0a.25.25 0 0 1 .25-.25h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5a.25.25 0 0 1-.25-.25v-.5zm1 2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5-2A.25.25 0 0 1 6.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 6 8.75v-.5zm-2 0A.25.25 0 0 1 4.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 4 8.75v-.5zm-2 0A.25.25 0 0 1 2.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 8.75v-.5zm11-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0A.25.25 0 0 1 9.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 9 6.75v-.5zm-2 0A.25.25 0 0 1 7.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 7 6.75v-.5zm-2 0A.25.25 0 0 1 5.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 5 6.75v-.5zm-3 0A.25.25 0 0 1 2.25 6h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5A.25.25 0 0 1 2 6.75v-.5zm0 4a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm2 0a.25.25 0 0 1 .25-.25h5.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-5.5a.25.25 0 0 1-.25-.25v-.5z">
+                                </path>
+                            </svg>
+                        </span>
+                        <textarea placeholder="Digite a descrição do departamento" class="textarea form-control"
+                            name="desc" id="desc" rows="3"></textarea>
+                    </div>
+
+                    <div class="inputfield">
+                        <label>Abreviatura: </label>
+                        <input type="text" class="input" placeholder="Exemplo: P, U, ...">
+                    </div>
+
+                    <div class="inputfield">
+                        <button type="button" class="btn btn-primary">Gravar</button>
+                    </div>
+
+                    <div class="inputfield">
+                        <button type="button" class="btn btn-primary">Sair</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!--==================== ABOUT ====================-->
+        <section class="about section" id="about">
+            <h2 class="section__title"> Sobre </h2>
+            <span class="section__subtitle">Introdução</span>
+            <div class="about__container container grid">
+                <img src="/assets/img/icone-u.png" alt="" class="about__img">
+
+                <div class="about__data">
+                    <p class="about__description">
+                        Zoro não passou dois anos treinando sozinho. O Olhos de Falcão pode ter sugerido isso ao
+                        notar a ganância do espadachim por poder. Mihawk fez a cicatriz em Zoro no primeiro
+                        treino dos dois durante o timeskip, como forma de marcar um novo início no caminho de Zoro
+                    </p>
+                    <div class="about__info">
+                        <div class="">
+                            <span class="about__info-title">08+</span>
+                            <span class="about__info-name">Years <br> experience</span>
+                        </div>
+
+                        <div class="">
+                            <span class="about__info-title">20+</span>
+                            <span class="about__info-name">Completed <br> project</span>
+                        </div>
+
+                        <div class="">
+                            <span class="about__info-title">05+</span>
+                            <span class="about__info-name">Companies <br> worked</span>
+                        </div>
+
+                        <div class="">
+                            <span class="about__info-title">1000+</span>
+                            <span class="about__info-name">Dúvidas <br> do que fazer</span>
+                        </div>
+                    </div>
+
+                    <div class="about__buttons">
+                        <a download="" href="\assets\pdf\DarkLightmode.js" class="button button--flex">
+                            Não sei o que colocar<i class="uil uil-download-alt button__icon"></i>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!--==================== ABOUT ====================-->
-        <section class="about section" id="about">
-
-
-        </section>
-
         <!--==================== SKILLS ====================-->
         <section class="skills section" id="skills">
+            <h2 class="section__title">Habilidades</h2>
+            <span class="section__subtitle">Nível técnico</span>
 
+            <div class="skills__container container grid">
+                <div>
+                    <!--================= SKILLS 1 =======================-->
+                    <div class="skills__content skills__open">
+                        <div class="skills__header">
+                            <i class="uil uil-brackets-curly skills__icon"></i>
 
+                            <div>
+                                <h1 class="skills__title">FrontEnd Developer</h1>
+                                <span class="skills_subtitle">Estagiário</span>
+                            </div>
+
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+
+                        <div class="skills__list grid">
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">HTML</h3>
+                                    <span class="skills__number">28%</span>
+                                </div>
+
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__html"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">CSS</h3>
+                                    <span class="skills__number">45%</span>
+                                </div>
+
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__css"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">JS</h3>
+                                    <span class="skills__number">51%</span>
+                                </div>
+
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__js"></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div>
+                    <!--================= SKILLS 2 =======================-->
+                    <div class="skills__content skills__close">
+                        <div class="skills__header">
+                            <i class="uil uil-server-network skills__icon"></i>
+                            <div class="">
+                                <h1 class="skills__title">BackEnd Developer</h1>
+                                <span class="skills_subtitle">Estagiário</span>
+                            </div>
+
+                            <i class="uil uil-angle-down skills__arrow"></i>
+                        </div>
+
+                        <div class="skills__list grid">
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">MySQL</h3>
+                                    <span class="skills__number">65%</span>
+                                </div>
+
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__mysql"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">PHP</h3>
+                                    <span class="skills__number">32%</span>
+                                </div>
+
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__php"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">Django</h3>
+                                    <span class="skills__number">91%</span>
+                                </div>
+
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__django"></span>
+                                </div>
+                            </div>
+
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">C#</h3>
+                                    <span class="skills__number">75%</span>
+                                </div>
+
+                                <div class="skills__bar">
+                                    <span class="skills__percentage skills__c"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!--==================== QUALIFICATION ====================-->
@@ -213,7 +512,7 @@
                                 <span class="qualification__line"></span>
                             </div>
 
-                            <div class="">
+                            <div>
                                 <h3 class="qualification__title">Web Design</h3>
                                 <span class="qualification__subtitle">Spain Universitinho</span>
                                 <div class="qualification__calendar">
@@ -240,7 +539,7 @@
                             </div>
                         </div>
 
-                        
+
                         <!--==================== QUALIFICATION 4 ====================-->
                         <div class="qualification__data">
                             <div></div>
@@ -249,7 +548,7 @@
                                 <span class="qualification__rounder"></span>
                                 <!-- <span class="qualification__line"></span> -->
                             </div>
-                            
+
                             <div>
                                 <h3 class="qualification__title">Master in UI/UX </h3>
                                 <span class="qualification__subtitle">Havard University</span>
@@ -366,7 +665,7 @@
     <script src=""></script>
 
     <!--==================== MAIN JS ====================-->
-    <script src="\assets\js\main.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 
 </html>
