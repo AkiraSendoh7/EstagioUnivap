@@ -365,7 +365,7 @@ include_once("conexao/banco.php");
                     </li>
                 </ul>
 
-                <div class="footer__sociais">
+                <!-- <div class="footer__sociais">
                     <a href="https://www.facebook.com/colegiosunivap" target="_blank" class="footer__social">
                         <i class='bx bxl-facebook'></i>
                     </a>
@@ -373,6 +373,17 @@ include_once("conexao/banco.php");
                     <a href="https://www.instagram.com/univapcolegios/" target="_blanks" class="footer__social">
                         <i class='bx bxl-instagram'></i>
                     </a>
+                </div> -->
+
+                <div class="icons_wrapper">
+                    <div class="icon facebook">
+                        <div class="tooltip">Facebook</div>
+                        <span><i class="fab fa-facebook-f"></i></span>
+                    </div>
+                    <div class="icon instagram">
+                        <div class="tooltip">Instagram</div>
+                        <span><i class="fab fa-instagram"></i></span>
+                    </div>
                 </div>
             </div>
 
