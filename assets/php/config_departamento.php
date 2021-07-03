@@ -1,5 +1,5 @@
 <?php
-    include_once("/Users/muril/Documents/Estagio/Estagio/assets/php/conexao/banco.php");
+    include_once("conexao/banco.php");
  
     //Variáveis para inserção no banco
     $codigocampi = $descricao = $abreviatura = "";

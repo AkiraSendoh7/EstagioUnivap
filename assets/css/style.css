@@ -125,6 +125,12 @@ body.dark-theme {
   margin: 0;
 }
 
+*:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -154,6 +160,11 @@ ul {
 a {
   text-decoration: none;
 }
+
+a:link {
+  text-decoration: none;
+}
+
 
 img {
   max-width: 100%;
@@ -260,6 +271,8 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  border: none;
 
   font-size: var(--small-font-size);
   color: var(--title-color);
@@ -799,7 +812,7 @@ textarea.input {
   top: 70px;
   border-left: 8px solid #FFA502;
   border-radius: 4px;
-} 
+}
 
 .alert {
   background: #ffdb9b;
@@ -907,7 +920,7 @@ textarea.input {
 }
 
 .footer__container {
-  row-gap: 3.5rem;
+  row-gap: 5rem;
 }
 
 .footer__bg {
@@ -931,17 +944,17 @@ textarea.input {
 }
 
 .footer__links:hover {
-  color: var(--first-color-lighter);
+  color: pink;
 }
 
-.footer__social {
+/* .footer__social {
   font-size: 1.25rem;
   margin-right: var(--mb-1-5);
-}
+} */
 
-.footer__social:hover {
+/* .footer__social:hover {
   color: var(--first-color-lighter);
-}
+} */
 
 .footer__copy {
   font-size: var(--smaller-font-size);
@@ -952,9 +965,82 @@ textarea.input {
 
 .footer__title,
 .footer__subtitle,
-.footer__link,
-.footer__social {
-  color: whitesmoke;
+.footer__link {
+  color: var(--body-color);
+}
+
+.icons_wrapper {
+  display: inline-flex;
+}
+
+.icons_wrapper .icon {
+  position: relative;
+  background-color: var(--body-color);
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.icons_wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.icons_wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.icons_wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.icons_wrapper .icon:hover span,
+.icons_wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.icons_wrapper .facebook:hover,
+.icons_wrapper .facebook:hover .tooltip,
+.icons_wrapper .facebook:hover .tooltip::before {
+  background-color: #3b5999;
+  color: #ffffff;
+}
+
+.icons_wrapper .instagram:hover,
+.icons_wrapper .instagram:hover .tooltip,
+.icons_wrapper .instagram:hover .tooltip::before {
+  background-color: #e1306c;
+  color: #ffffff;
 }
 
 /*========== SCROLL UP ==========*/
