@@ -14,8 +14,7 @@ include("conexao/banco.php");
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap links -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -30,7 +29,9 @@ include("conexao/banco.php");
 
     <!--==================== JS ====================-->
     <!-- <script src="/assets/js/main.js"></script> -->
-    <script src="/assets/js/darklightmode.js"></script>
+    <script src="/assets/js/menu_card.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
+    <!-- <script src="/assets/js/darklightmode.js" defer></script> -->
     <script src="/assets/js/vanilla-masker.js"></script>
 
     <!-- Font Awesome CSS Links -->
@@ -40,107 +41,124 @@ include("conexao/banco.php");
 </head>
 
 <body>
-    <?php
-        include("header.php");
-    ?>
-    
-    <form method="POST" action="config_centro.php">
-        <section class="sec">
-            <div class="lin">
-                <!-- <a href="/Estagio/assets/php/main/departamento.php" class="linter">Departamento</a> -->
-            </div>
+    <?php include("header.php"); ?>
+ 
+    <i class='bx bx-moon change-theme' id="theme-button"></i>
 
-            <div class="wrapper">
-                <div class="title"> Centro de Custo </div>
-
-                <div class="toggle"></div>
-
-                <div class="form">
-                    <div class="inputfield form-group">
-                        <label class="form-label" for="codigocampi">Campi: * </label>
-                        <div class="custom_select">
-                            <?php
-                            $query = ("SELECT * FROM departamentos");
-                            $result = $con->query($query);
-                            ?>
-                            <select onchange="retornaCodigo(this.value)" name="codigocampi" id="codigocampi" class="form-control" required>
-                                <option value="">Selecione o código do campi: </option>
-                                <?php
-                                if ($result->num_rows > 0) {
-                                    while ($reg = $result->fetch_assoc()) {
-                                        echo '<option value="' . $reg["codigocampi"] . '">' . $reg["codigocampi"] . '</option>';
-                                    }
-                                }
-                                ?>
-                            </select>
+    <!-- Theme change button  -->
+    <div class="tabs">
+        <div class="tab-header">
+            <div class="active"> Inserir </div>
+            <div> Alterar </div>
+            <div> Visualizar </div>
+            <div> Excluir </div>
+        </div>
+        <div class="tab-indicator"></div>
+        <div class="tab-body">
+            <div class="active">
+                <form method="POST" action="config_centro.php">
+                    <section class="sec" name="section">
+                        <div class="lin">
+                            <!-- <a href="/Estagio/assets/php/main/departamento.php" class="linter">Departamento</a> -->
                         </div>
-                    </div>
 
-                    <div class="inputfield">
-                        <label class="form-label" for="centrocusto">Centro de custo: *</label>
-                        <div class="custom_select">
-                            <!-- <select minlength="6" maxlength="6" id="centrocusto" class="form-control" name="centrocusto" required>
+                        <div class="wrapper">
+                            <div class="title"> Centro de Custo </div>
+
+                            <div class="form">
+                                <div class="inputfield form-group">
+                                    <label class="form-label" for="codigocampi">Campi: * </label>
+                                    <div class="custom_select">
+                                        <?php
+                                        $query = ("SELECT * FROM departamentos");
+                                        $result = $con->query($query);
+                                        ?>
+                                        <select onchange="retornaCodigo(this.value)" name="codigocampi" id="codigocampi" class="form-control" required>
+                                            <option value="">Selecione o código do campi: </option>
+                                            <?php
+                                            if ($result->num_rows > 0) {
+                                                while ($reg = $result->fetch_assoc()) {
+                                                    echo '<option value="' . $reg["codigocampi"] . '">' . $reg["codigocampi"] . '</option>';
+                                                }
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="inputfield">
+                                    <label class="form-label" for="centrocusto">Centro de custo: *</label>
+                                    <div class="custom_select">
+                                        <!-- <select minlength="6" maxlength="6" id="centrocusto" class="form-control" name="centrocusto" required>
                                 <option class="form-control">Selecione os centro de custos: </option>
                             </select> -->
-                            <input list="centrocusto" placeholder="Selecione o centro de custo" name="centrocusto" id="centrocusto">
-                            <datalist id="centrocusto" name="codigocentro">
-                                <option value="">
-                            </datalist>
+                                        <input list="centrocusto" placeholder="Selecione o centro de custo" name="centrocusto" id="centrocusto">
+                                        <datalist id="centrocusto" name="codigocentro">
+                                            <option value="">
+                                        </datalist>
+                                    </div>
+                                </div>
+
+                                <script type="text/javascript">
+                                    function retornaCodigo(id) {
+                                        $('#centrocusto').html('');
+                                        $.ajax({
+                                            type: 'post',
+                                            url: 'ajax.php',
+                                            data: {
+                                                codigocampi: id
+                                            },
+                                            success: function(data) {
+                                                $('#centrocusto').html(data);
+                                            }
+                                        })
+                                    }
+                                </script>
+
+                                <div class="inputfield">
+                                    <label class="form-label" for="desc">Descrição: *</label>
+                                    <textarea placeholder="Digite a descrição do departamento" maxlength="200" minlength="10" class="textarea form-control" name="desc" id="desc" rows="3" required></textarea>
+                                </div>
+
+                                <div class="inputfield">
+                                    <label class="form-label" for="tel">Telefone: </label>
+                                    <input type="tel" id="tel" attrname="telephone1" data-mask="(00) 0000-0000" data-mask-reverse="true" name="tel" pattern="\(\d{2}\)\s*\d{5}-\d{4}" class="phone" placeholder="Número de telefone - (opcional)" maxlength="15">
+                                </div>
+
+                                <script>
+                                    // Listen the input element masking it to format with pattern.
+                                    function inputHandler(masks, max, event) {
+                                        var c = event.target;
+                                        var v = c.value.replace(/\D/g, '');
+                                        var m = c.value.length > max ? 1 : 0;
+                                        VMasker(c).unMask();
+                                        VMasker(c).maskPattern(masks[m]);
+                                        c.value = VMasker.toPattern(v, masks[m]);
+                                    }
+
+                                    var telMask = ['(99) 9999-99999', '(99) 99999-9999'];
+                                    var tel = document.querySelector('input[attrname=telephone1]');
+                                    VMasker(tel).maskPattern(telMask[0]);
+                                    tel.addEventListener('input', inputHandler.bind(undefined, telMask, 14), false);
+                                </script>
+
+                                <div class="inputfield">
+                                    <button formmethod="POST" type="submit" class="btn btn-primary">Gravar</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <script type="text/javascript">
-                        function retornaCodigo(id) {
-                            $('#centrocusto').html('');
-                            $.ajax({
-                                type: 'post',
-                                url: 'ajax.php',
-                                data: {
-                                    codigocampi: id
-                                },
-                                success: function(data) {
-                                    $('#centrocusto').html(data);
-                                }
-                            })
-                        }
-                    </script>
-
-                    <div class="inputfield">
-                        <label class="form-label" for="desc">Descrição: *</label>
-                        <textarea placeholder="Digite a descrição do departamento" maxlength="200" minlength="10" class="textarea form-control" name="desc" id="desc" rows="3" required></textarea>
-                    </div>
-
-                    <div class="inputfield">
-                        <label class="form-label" for="tel">Telefone: </label>
-                        <input type="tel" id="tel" attrname="telephone1" data-mask="(00) 0000-0000" 
-                        data-mask-reverse="true" name="tel" pattern="\(\d{2}\)\s*\d{5}-\d{4}" 
-                        class="phone" placeholder="Número de telefone - (opcional)" maxlength="15">
-                    </div>
-
-                    <script>
-                        // Listen the input element masking it to format with pattern.
-                        function inputHandler(masks, max, event) {
-                            var c = event.target;
-                            var v = c.value.replace(/\D/g, '');
-                            var m = c.value.length > max ? 1 : 0;
-                            VMasker(c).unMask();
-                            VMasker(c).maskPattern(masks[m]);
-                            c.value = VMasker.toPattern(v, masks[m]);
-                        }
-
-                        var telMask = ['(99) 9999-99999', '(99) 99999-9999'];
-                        var tel = document.querySelector('input[attrname=telephone1]');
-                        VMasker(tel).maskPattern(telMask[0]);
-                        tel.addEventListener('input', inputHandler.bind(undefined, telMask, 14), false);
-                    </script>
-
-                    <div class="inputfield">
-                        <button formmethod="POST" type="submit" class="btn btn-primary">Gravar</button>
-                    </div>
-                </div>
+                    </section>
+                </form>
             </div>
-        </section>
-    </form>
+
+            <div>
+                <h2>Alterar</h2>
+            </div>
+            <div>
+                <h2>Visualizar</h2>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
