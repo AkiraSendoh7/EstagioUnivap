@@ -12,13 +12,13 @@
             <input type="text" placeholder="Pesquise...">
             <span class="tooltip">Pesquise</span>
         </li>
-        <li>
+        <!-- <li>
             <a href="#">
                 <i class='bx bx-grid-alt'></i>
                 <span class="links_name">Painel</span>
             </a>
             <span class="tooltip">Painel</span>
-        </li>
+        </li> -->
         <li>
             <a href="index.php">
                 <i class="bx bx-home"></i>

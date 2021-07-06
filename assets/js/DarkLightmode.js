@@ -1,5 +1,5 @@
-const wra = document.querySelector(".sec");
-const toggle = document.querySelector(".toggle");
+const wra = document.querySelector("[name=section]");
+const toggle = document.querySelector("[name=toggle]");
 var teste = 1;
 
 toggle.onclick = function () {

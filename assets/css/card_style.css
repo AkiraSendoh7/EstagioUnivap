@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 
-:root 
-{
+:root {
     /* Tamanhos, cores e estilo das fontes */
-    --font-geral: #6e57e0;
+    --font-geral: #00acee;
     --font-geralHover: #343a40;
 
     --dark-font-geral: #fff700;
@@ -12,6 +11,75 @@
     /* Cores do background para o tema dark e light */
     --bg-light: #f8f9fa;
     --dark-card-color: #100c08;
+}
+
+.tabs {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 610px;
+
+    background: whitesmoke;
+    padding: 20px 30px;
+    overflow: hidden;
+
+    border-radius: 50px;
+    box-shadow: 5px 10px 5px #ccc;
+}
+
+.tabs .tab-header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.tabs .tab-header>div {
+    width: calc(100% / 4);
+    text-align: center;
+    color: #888;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.tabs .tab-header>div.active {
+    color: var(--font-geral);
+}
+
+.tabs .tab-indicator {
+    position: relative;
+    width: calc(100% / 4);
+    height: 5px;
+    background: var(--font-geral);
+    left: 0px;
+    border-radius: 5px;
+    transition: all 500ms ease-in-out;
+}
+
+.tabs .tab-body {
+    position: relative;
+    height: calc(100% - 60px);
+    padding: 10px 5px;
+}
+
+.tabs .tab-body>div {
+    position: absolute;
+    top: -200%;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 500ms ease-in-out 0ms,
+        transform 500ms ease-in-out 0ms;
+}
+
+.tabs .tab-body>div.active {
+    top: 0px;
+    opacity: 1;
+    transform: scale(1);
 }
 
 .wrapper {
@@ -26,7 +94,7 @@
 
 section.dark .wrapper {
     transition: 0.75s;
-    background: var(--dark-card-color);
+    /* background: var(--dark-card-color); */
     color: whitesmoke;
 }
 
@@ -92,8 +160,7 @@ section.dark .wrapper {
 }
 
 .wrapper .form .inputfield .custom_select select,
-.wrapper .form .inputfield input
-{
+.wrapper .form .inputfield input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -112,8 +179,7 @@ section.dark .wrapper {
 .wrapper .form .inputfield .input:focus,
 .wrapper .form .inputfield .textarea:focus,
 .wrapper .form .inputfield .custom_select select:focus,
-.wrapper .form .inputfield input:focus
-{
+.wrapper .form .inputfield input:focus {
     border: 1px solid var(--font-geral);
     outline: none;
 
@@ -240,30 +306,3 @@ section.dark .toggle:before {
     content: "\f185";
     color: whitesmoke;
 }
-/* 
-.form-group
-
-.form-control
-{
-    box-shadow: none;
-
-    border-radius: 0;
-    border-color: #ccc;
-    border-style: none none solid none;
-
-    width: 100%;
-    font-size: 1.25em;
-    transition: all .6s;
-}
-
-.form-control::placeholder
-{
-    color: #aaa;
-}
-
-.form-control:focus
-{
-    box-shadow: none;
-    border-color: #ffc709;
-    outline: none;
-} */

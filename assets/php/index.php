@@ -226,37 +226,24 @@ include_once("conexao/banco.php");
                 <img src="/assets/img/shape.png" class="square" alt="" />
                 <div class="form_contact">
                     <div class="contact-info">
-                        <h3 class="title">Let's get in touch</h3>
+                        <h3 class="title">Fale conosco</h3>
                         <p class="text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                            dolorum adipisci recusandae praesentium dicta!
+                            Fale conosco caso ocorra algum erro no site, ou até se quiser 
+                            falar algo sobre o problema que está tendo.
                         </p>
 
                         <div class="info">
                             <div class="information">
                                 <i class="bi bi-geo-alt icon"></i>
-                                <p>92 Cherry Drive Uniondale, NY 11553</p>
+                                <p>Avenida Shishima Hifumi, 2911 - Urbanova</p>
                             </div>
                             <div class="information">
                                 <i class="bi bi-envelope icon"></i>
-                                <p>lorem@ipsum.com</p>
+                                <p>tudoaqui@univap.br</p>
                             </div>
                             <div class="information">
                                 <i class="bi bi-telephone icon"></i>
-                                <p>123-456-789</p>
-                            </div>
-                        </div>
-
-                        <div class="social-media">
-                            <p>Connect with us: </p>
-                            <div class="social-icons">
-                                <a href="https://www.facebook.com/colegiosunivap" target="_blank" class="footer__social">
-                                    <i class='bx bxl-facebook'></i>
-                                </a>
-
-                                <a href="https://www.instagram.com/univapcolegios/" target="_blanks" class="footer__social">
-                                    <i class='bx bxl-instagram'></i>
-                                </a>
+                                <p>(12) 3947-1000</p>
                             </div>
                         </div>
                     </div>
@@ -349,20 +336,17 @@ include_once("conexao/banco.php");
 
                 <ul class="footer__links">
                     <li>
+                        <a href="#home" class="footer__link">Home</a>
+                    </li>
+
+                    <li>
                         <a href="#about" class="footer__link">Sobre</a>
-                    </li>
-
-                    <li>
-                        <a href="#skills" class="footer__link">Habilidades</a>
-                    </li>
-
-                    <li>
-                        <a href="#qualification" class="footer__link">Qualidades</a>
                     </li>
 
                     <li>
                         <a href="#contact" class="footer__link">Contate-nos</a>
                     </li>
+                    
                 </ul>
 
                 <!-- <div class="footer__sociais">
@@ -375,6 +359,7 @@ include_once("conexao/banco.php");
                     </a>
                 </div> -->
 
+                <!-- Ícones do footer do facebook e Instagram da escola  -->
                 <div class="icons_wrapper">
                     <div class="icon facebook">
                         <div class="tooltip">Facebook</div>

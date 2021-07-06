@@ -20,13 +20,14 @@ include_once("conexao/banco.php");
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!--==================== CSS ====================-->
-    <link rel="stylesheet" href="/Estagio/assets/css/card_style.css">
-    <link rel="stylesheet" href="/Estagio/assets/css/style.css">
-    <link rel="stylesheet" href="/Estagio/assets/css/menu_card.css">
+    <link rel="stylesheet" href="/assets/css/card_style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/menu_card.css">
 
     <!--==================== JS ====================-->
-    <script src="/estagio/assets/js/main.js"></script>
-    <script src="/estagio/assets/js/darklightmode.js"></script>
+    <script src="/assets/js/menu_card.js" defer></script>
+    <script src="/assets/js/darklightmode.js" defer></script>
+    <script src="/assets/js/vanilla-masker.js"></script>
 
     <!-- Font Awesome CSS Links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
@@ -35,62 +36,75 @@ include_once("conexao/banco.php");
 </head>
 
 <body>
-    <?php
-        include("/Users/muril/Documents/Estagio/Estagio/assets/php/header.php");
-    ?>
-    <form method="POST" action="/Estagio/assets/php/config_departamento.php">
-        <section class="sec">
-            <div class="lin">
-                <!-- <a href="centrodecusto.php" class="linter">Centro de custo</a> -->
+    <?php include("header.php"); ?>
+
+    <div class="toggle" name="toggle"></div>
+
+    <div class="tabs">
+        <div class="tab-header">
+            <div class="active"> Inserir </div>
+            <div> Alterar </div>
+            <div> Visualizar </div>
+            <div> Excluir </div>
+        </div>
+        <div class="tab-indicator"></div>
+        <div class="tab-body">
+            <div class="active">
+
+                <form method="POST" action="config_departamento.php">
+                    <section class="sec" name="section">
+                        <div class="lin">
+                            <!-- <a href="centrodecusto.php" class="linter">Centro de custo</a> -->
+                        </div>
+
+                        <div class="wrapper">
+
+                            <div class="title"> Departamento </div>
+
+                            <div class="form">
+                                <div class="inputfield">
+                                    <label for="codigocampi">Campi: </label>
+                                    <input placeholder="Selecione o campi" id="campi" name="codigocampi" list="codigocampi" autocomplete="off" tabindex="1" required>
+                                    <?php
+                                    $query = $con->query("SELECT codigocampi FROM departamentos");
+                                    ?>
+                                    <datalist id="codigocampi" name="codigocampi">
+                                        <?php while ($reg = $query->fetch_array()) { ?>
+                                            <option value="<?php echo $reg["codigocampi"] ?>">
+                                                <?php echo $reg["codigocampi"] ?>
+                                            </option>
+                                        <?php } ?>
+                                    </datalist>
+                                </div>
+
+                                <div class="inputfield form-group">
+                                    <label for="">Descrição: </label>
+                                    <textarea maxlength="30" placeholder="Digite a descrição do campi" class="textarea form-control" name="descricao" id="descricao" rows="3" tabindex="2" required></textarea>
+                                </div>
+
+                                <div class="inputfield">
+                                    <label>Abreviatura: </label>
+                                    <input autocomplete="off" minlength="1" maxlength="2" type="text" placeholder="Digite a abreviatura do campi" id="abrev" name="abrev" tabindex="3" required>
+                                </div>
+
+                                <div class="inputfield">
+                                    <button type="submit" class="btn btn-primary" tabindex="4">Gravar</button>
+                                    <!-- <button type="button" class="btns btn-primary" tabindex="5">Sair</button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </form>
             </div>
 
-            <div class="wrapper">
-
-                <div class="title"> Departamento </div>
-
-                <div class="toggle"></div>
-
-                <div class="form">
-                    <div class="inputfield">
-                        <label for="codigocampi">Campi: </label>
-                        <input placeholder="Selecione o campi" id="campi" name="codigocampi" 
-                            list="codigocampi" autocomplete="off" tabindex="1" required>
-                        <?php
-                        $query = $con->query("SELECT codigocampi FROM departamentos");
-                        ?>
-                        <datalist id="codigocampi" name="codigocampi">
-                            <?php while ($reg = $query->fetch_array()) { ?>
-                                <option value="<?php echo $reg["codigocampi"] ?>">
-                                    <?php echo $reg["codigocampi"] ?>
-                                </option>
-                            <?php } ?>
-                        </datalist>
-                    </div>
-
-                    <div class="inputfield form-group">
-                        <label for="">Descrição: </label>
-                        <textarea maxlength="30" placeholder="Digite a descrição do campi"
-                            class="textarea form-control" name="descricao" id="descricao" rows="3" 
-                            tabindex="2" required></textarea>
-                    </div>
-
-                    <div class="inputfield">
-                        <label>Abreviatura: </label>
-                        <input autocomplete="off" minlength="1" maxlength="2" type="text" 
-                            placeholder="Digite a abreviatura do campi" id="abrev" name="abrev" 
-                            tabindex="3" required>
-                    </div>
-
-                    <div class="inputfield">
-                        <button type="submit" class="btn btn-primary" tabindex="4">Gravar</button>
-                        <button type="button" class="btns btn-primary" tabindex="5">Sair</button>
-                    </div>
-                </div>
+            <div>
+                <h2>Alterar</h2>
             </div>
-        </section>
-    </form>
-    <script src="/Estagio/assets/js/DarkLightMode.js"></script>
-
+            <div>
+                <h2>Visualizar</h2>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
