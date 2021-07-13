@@ -16,6 +16,7 @@ include_once("conexao/banco.php");
 
     <!--========== BOOTSTRAP ICONS ==========-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css" integrity="sha256-DBYdrj7BxKM3slMeqBVWX2otx7x4eqoHRJCsSDJ0Nxw=" crossorigin="anonymous" />
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -34,6 +35,7 @@ include_once("conexao/banco.php");
     <!-- Font Awesome CSS Links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <title>Página inicial</title>
 </head>
@@ -64,7 +66,7 @@ include_once("conexao/banco.php");
                     <li class="nav__item">
                         <a href="#contact" class="nav__link">
                             <i class="bi bi-chat-left-text nav__icon"></i>
-                            Contate-nos
+                            Contate
                         </a>
                     </li>
 
@@ -83,11 +85,39 @@ include_once("conexao/banco.php");
                     </li>
 
                     <li class="nav__item">
-                        <a href="#configuracoes" class="nav__link">
-                            <i class="bi bi-gear nav__icon"></i>
-                            Configurações
+                        <a class="nav__link">
+                            <div class="action">
+                                <div class="profile" onclick="menuToggle()">
+                                    <img src="/assets/img/zoro-ashura.jpg" alt="">
+                                </div>
+                                <div class="menu">
+                                    <h3>Usuário não identificado<br>
+                                        <span>Emprego não identificado</span>
+                                    </h3>
+
+                                    <ul>
+                                        <li>
+                                            <i class="bi bi-person"></i>
+                                            <a href="#person"> Meu perfil </a>
+                                        </li>
+                                        <li>
+                                            <i class="bi bi-pen"></i>
+                                            <a href="#edit">Edite o perfil</a>
+                                        </li>
+                                        <li>
+                                            <i class="bi bi-gear"></i>
+                                            <a href="#settings">Configurações</a>
+                                        </li>
+                                        <li>
+                                            <i class='bx bx-log-out'></i>
+                                            <a href="#logout">Sair</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </a>
                     </li>
+
                 </ul>
                 <i class="bx bx-x bx-sm nav__close" id="nav-close"></i>
             </div>
@@ -105,7 +135,6 @@ include_once("conexao/banco.php");
 
     <!--==================== MAIN ====================-->
     <main class="main">
-
         <!--==================== HOME ====================-->
         <section class="home section" id="home">
             <div class="home__container container grid">
@@ -213,6 +242,39 @@ include_once("conexao/banco.php");
             </div>
         </section>
 
+        <!--==================== ABOUT - CAROUSEL SLIDER IMAGES====================-->
+        <section class="start section" id="start">
+            <div class="slider">
+                <div class="slide active">
+                    <img src="/assets/img/univap-aquarius.jpg" alt="">
+                    <div class="info">
+                        <h1 class="start__title" id="aquarius">Unidade Aquarius.</h1>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="/assets/img/univap-centro.jpeg" alt="">
+                    <div class="info">
+                        <h1 class="start__title" id="centro">Unidade Centro.</h1>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="/assets/img/univap-villa-branca.png" alt="">
+                    <div class="info">
+                        <h1 class="start__title" id="villaBranca">Unidade Villa Branca.</h1>
+                    </div>
+                </div>
+                <div class="navigation">
+                    <i class="fas fa-chevron-left prev-btn"></i>
+                    <i class="fas fa-chevron-right next-btn"></i>
+                </div>
+                <div class="navigation-visibility">
+                    <div class="slide-icon active"></div>
+                    <div class="slide-icon"></div>
+                    <div class="slide-icon"></div>
+                </div>
+            </div>
+        </section>
+
         <!--==================== CONTACT ME ====================-->
         <?php include 'sendmail.php' ?>
 
@@ -228,7 +290,7 @@ include_once("conexao/banco.php");
                     <div class="contact-info">
                         <h3 class="title">Fale conosco</h3>
                         <p class="text">
-                            Fale conosco caso ocorra algum erro no site, ou até se quiser 
+                            Fale conosco caso ocorra algum erro no site, ou até se quiser
                             falar algo sobre o problema que está tendo.
                         </p>
 
@@ -344,9 +406,9 @@ include_once("conexao/banco.php");
                     </li>
 
                     <li>
-                        <a href="#contact" class="footer__link">Contate-nos</a>
+                        <a href="#contact" class="footer__link">Contate</a>
                     </li>
-                    
+
                 </ul>
 
                 <!-- <div class="footer__sociais">
@@ -361,14 +423,14 @@ include_once("conexao/banco.php");
 
                 <!-- Ícones do footer do facebook e Instagram da escola  -->
                 <div class="icons_wrapper">
-                    <div class="icon facebook">
+                    <a class="icon facebook" href="https://www.facebook.com/colegiosunivap" target="_blank">
                         <div class="tooltip">Facebook</div>
                         <span><i class="fab fa-facebook-f"></i></span>
-                    </div>
-                    <div class="icon instagram">
+                    </a>
+                    <a class="icon instagram" href="https://www.instagram.com/univapcolegios/" target="_blank">
                         <div class="tooltip">Instagram</div>
                         <span><i class="fab fa-instagram"></i></span>
-                    </div>
+                    </a>
                 </div>
             </div>
 
