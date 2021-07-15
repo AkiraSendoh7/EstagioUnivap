@@ -27,10 +27,10 @@ include_once("conexao/banco.php");
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <!--==================== CSS ====================-->
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/Estagio/assets/css/style.css">
     <!-- <link rel="stylesheet" href="http://localhost/Estagio/assets/css/card_style.css" /> -->
 
-    <script src="/assets/js/vanilla-masker.js"></script>
+    <script src="/Estagio/assets/js/vanilla-masker.js"></script>
 
     <!-- Font Awesome CSS Links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
@@ -88,7 +88,7 @@ include_once("conexao/banco.php");
                         <a class="nav__link">
                             <div class="action">
                                 <div class="profile" onclick="menuToggle()">
-                                    <img src="/assets/img/zoro-ashura.jpg" alt="">
+                                    <img src="/Estagio/assets/img/zoro-ashura.jpg" alt="">
                                 </div>
                                 <div class="menu">
                                     <h3>Usuário não identificado<br>
@@ -146,7 +146,7 @@ include_once("conexao/banco.php");
 
                         <figure class="img-univap" id="img-univap">
                             <a href="https://www.univap.br/home/colegio/portal-educacional/portal-educacional.html" target="_blank" class="home__social-icon">
-                                <img title="Site da Univap" src="/assets/img/icone-u.png"" alt=" Ícone da Univap" width="23" height="21">
+                                <img title="Site da Univap" src="/Estagio/assets/img/icone-u.png"" alt=" Ícone da Univap" width="23" height="21">
                             </a>
                         </figure>
 
@@ -168,7 +168,7 @@ include_once("conexao/banco.php");
                                     165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
                                     129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
                                     -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-                                <image class="home__blob-img" x='12' y='18' xlink:href="/assets/img/icone_personagem.jpg" />
+                                <image class="home__blob-img" x='12' y='18' xlink:href="/Estagio/assets/img/icone_personagem.jpg" />
                             </g>
                         </svg>
 
@@ -203,7 +203,7 @@ include_once("conexao/banco.php");
             <h2 class="section__title"> Sobre </h2>
             <span class="section__subtitle">Introdução</span>
             <div class="about__container container grid">
-                <img src="/assets/img/icone-u.png" alt="Ícone da Univap" class="about__img">
+                <img src="/Estagio/assets/img/icone-u.png" alt="Ícone da Univap" class="about__img">
 
                 <div class="about__data">
                     <p class="about__description">
@@ -246,19 +246,19 @@ include_once("conexao/banco.php");
         <section class="start section" id="start">
             <div class="slider">
                 <div class="slide active">
-                    <img src="/assets/img/univap-aquarius.jpg" alt="">
+                    <img src="/Estagio/assets/img/univap-aquarius.jpg" alt="">
                     <div class="info">
                         <h1 class="start__title" id="aquarius">Unidade Aquarius.</h1>
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="/assets/img/univap-centro.jpeg" alt="">
+                    <img src="/Estagio/assets/img/univap-centro.jpeg" alt="">
                     <div class="info">
                         <h1 class="start__title" id="centro">Unidade Centro.</h1>
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="/assets/img/univap-villa-branca.png" alt="">
+                    <img src="/Estagio/assets/img/univap-villa-branca.png" alt="">
                     <div class="info">
                         <h1 class="start__title" id="villaBranca">Unidade Villa Branca.</h1>
                     </div>
@@ -285,7 +285,7 @@ include_once("conexao/banco.php");
         <section class="contact section" id="contact">
             <div class="container_contact">
                 <span class="big-circle"></span>
-                <img src="/assets/img/shape.png" class="square" alt="" />
+                <img src="/Estagio/assets/img/shape.png" class="square" alt="" />
                 <div class="form_contact">
                     <div class="contact-info">
                         <h3 class="title">Fale conosco</h3>
@@ -448,7 +448,7 @@ include_once("conexao/banco.php");
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!--==================== MAIN JS ====================-->
-    <script src="/assets/js/main.js"></script>
+    <script src="/Estagio/assets/js/main.js"></script>
 </body>
 
 </html>
