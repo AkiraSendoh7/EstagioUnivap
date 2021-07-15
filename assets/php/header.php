@@ -1,7 +1,7 @@
 <div class="sidebar">
     <div class="logo_content">
         <div class="logo">
-            <img src="/assets/img/icone-u.png" width="20%">
+            <img src="/Estagio/assets/img/icone-u.png" width="20%">
             <div class="logo_name" style="text-indent: 50%">UNIVAP</div>
         </div>
         <i class='bx bx-menu' id="btn" title="Menu"></i>

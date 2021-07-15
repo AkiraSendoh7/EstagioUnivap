@@ -13,10 +13,7 @@
             {
                 echo '<option value="'.$reg['codigocentrocusto'].'">'.$reg['codigocentrocusto'].'</option>';
             }
-        }
-
-        else
-        {
-            echo '<option> Nenhum código encontrado! </option>';
+        }else{
+            echo '<option disabled> Nenhum código encontrado! </option>';
         }
     }
