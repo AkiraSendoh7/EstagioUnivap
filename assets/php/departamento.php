@@ -20,14 +20,14 @@ include_once("conexao/banco.php");
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!--==================== CSS ====================-->
-    <link rel="stylesheet" href="/Estagio/assets/css/card_style.css">
-    <link rel="stylesheet" href="/Estagio/assets/css/style.css">
-    <link rel="stylesheet" href="/Estagio/assets/css/menu_card.css">
+    <link rel="stylesheet" href="../css/card_style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu_card.css">
 
     <!--==================== JS ====================-->
-    <script src="/Estagio/assets/js/menu_card.js" defer></script>
-    <script src="/Estagio/assets/js/darklightmode.js" defer></script>
-    <script src="/Estagio/assets/js/vanilla-masker.js"></script>
+    <script src="../js/menu_card.js" defer></script>
+    <script src="../js/darklightmode.js" defer></script>
+    <script src="../js/vanilla-masker.js"></script>
 
     <!-- Font Awesome CSS Links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
@@ -42,17 +42,45 @@ include_once("conexao/banco.php");
 
     <div class="tabs">
         <div class="tab-header">
-            <div class="active" onclick="openTab('inserir'), cleanElements(1)"> Inserir </div>
-            <div onclick="openTab('alterar'), cleanElements(2)"> Alterar </div>
+            <div id="clickInserir" class="active" onclick="openTab('inserir'), cleanElements(1)"> Inserir </div>
+            <div id="clickAlterar" onclick="openTab('alterar'), cleanElements(2)"> Alterar </div>
             <div onclick="openTab('visualizar'), showTable()"> Visualizar </div>
-            <div onclick="openTab('excluir'), cleanElements(3)"> Excluir </div>
+            <div id="clickExcluir" onclick="openTab('excluir'), cleanElements(3)"> Excluir </div>
         </div>
         <div class="tab-indicator"></div>
         <div class="tab-body">
             <div style="position: relative" class="tabcontent active" id="inserir">
                 <div class="active">
-
-                    <form method="POST" action="config_departamento.php">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript">
+                        $('#formInserir').submit(function(e){
+                            
+                            
+                            var idCampi = $("#campi_inserir input[name=codigocampi_inserir]");
+                            var descricao = $("#descricao_inserir textarea[name=descricao_inserir]");
+                            var abreviatura = $("#abrev_inserir input[name=abrev_inserir]");
+                            var url = $("#formInserir").attr("action");
+                            
+                            e.preventDefault();
+                            $.ajax({
+                                type:'post',
+                                url:url,
+                                data: {
+                                    idCampi_inserir: idCampi,
+                                    descricao_inserir: descricao,
+                                    abreviatura_inserir: abreviatura
+                                },
+                                success: function(data){
+                                    $("#campi_inserir input[name=codigocampi_inserir]").val('');
+                                    $("#descricao_inserir textarea[name=descricao_inserir]").val('');
+                                    $("#abrev_inserir input[name=abrev_inserir]").val('');
+                                    console.log("a");
+                                    alert("Dado inserido com sucesso!");
+                                    openTab('inserir');
+                                }
+                            });
+                        });
+                    </script>
+                    <form id="formInserir" method="POST" action="config_departamento.php">
                         <section class="sec" name="section">
                             <div class="lin">
                                 <!-- <a href="centrodecusto.php" class="linter">Centro de custo</a> -->
@@ -91,6 +119,7 @@ include_once("conexao/banco.php");
                                     <div id="blockbtn" class="inputfield">
                                         <button type="submit" class="btn btn-primary" tabindex="4">Gravar</button>
                                     </div>
+        
                                 </div>
                             </div>
                         </section>
@@ -101,8 +130,34 @@ include_once("conexao/banco.php");
 
             <div class="tabcontent" style="display: none" id="alterar">
                 <div class="active">
-
-                    <form method="POST" action="config_departamento.php">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript">
+                        $('#formAlterar').submit(function(e){
+    
+                            var idCampi = $("#campi_inserir input[name=codigocampi_alterar]");
+                            var descricao = $("#descricao_inserir textarea[name=descricao_alterar]");
+                            var abreviatura = $("#abrev_inserir input[name=abrev_alterar]");
+                            var url = $("#formAlterar").attr("action");
+                            
+                            e.preventDefault();
+                            $.ajax({
+                                type:'post',
+                                url:url,
+                                data: {
+                                    idCampi_alterar: idCampi,
+                                    descricao_alterar: descricao,
+                                    abreviatura_alterar: abreviatura
+                                },
+                                done: function(data){
+                                    $("#campi_alterar input[name=codigocampi_alterar]").val('');
+                                    $("#descricao_alterar textarea[name=descricao_alterar]").val('');
+                                    $("#abrev_alterar input[name=abrev_alterar]").val('');
+                                    alert("Dado alterado com sucesso!");
+                                    openTab('alterar');
+                                }
+                            });
+                        });
+                    </script>
+                    <form id="formAlterar" method="POST" action="config_departamento.php">
                         <section class="sec" name="section">
                             <div class="lin">
                                 <!-- <a href="centrodecusto.php" class="linter">Centro de custo</a> -->
@@ -145,6 +200,7 @@ include_once("conexao/banco.php");
                             </div>
                         </section>
                     </form>
+                    
                 </div>
             </div>
 
@@ -154,8 +210,32 @@ include_once("conexao/banco.php");
 
             <div class="tabcontent" style="display: none" id="excluir">
                 <div class="active">
-
-                    <form method="POST" action="config_departamento.php">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript">
+                        $('#formExcluir').submit(function(e){
+                            
+                            
+                            var idCampi = $("#campi_excluir input[name=codigocampi_excluir]");
+                            var url = $("#formExcluir").attr("action");
+                            
+                            e.preventDefault();
+                            $.ajax({
+                                type:'post',
+                                url:url,
+                                data: {
+                                    idCampi_inserir: idCampi,
+                                },
+                                done: function(data){
+                                    $("#campi_excluir input[name=codigocampi_excluir]").val('');
+                                    $("#descricao_excluir textarea[name=descricao_excluir]").val('');
+                                    $("#abrev_excluir input[name=abrev_excluir]").val('');
+                                    console.log("a");
+                                    alert("Dado excluido com sucesso!");
+                                    openTab('excluir');
+                                }
+                            });
+                        });
+                    </script>
+                    <form id="formExcluir" method="POST" action="config_departamento.php">
                         <section class="sec" name="section">
                             <div class="lin">
                                 <!-- <a href="centrodecusto.php" class="linter">Centro de custo</a> -->
@@ -206,6 +286,7 @@ include_once("conexao/banco.php");
     <script type="text/javascript">
         var dr = 0;
         var cod = 0;
+        var alt_control = 0;
         const div = document.getElementById("visualizar");
 
         function showTable() {
@@ -223,10 +304,6 @@ include_once("conexao/banco.php");
                 }
             })
         }
-
-
-        const ver = document.getElementById("descricao");
-        ver.addEventListener("compositionupdate", getAbrev());
 
         function cleanElements(value) {
 
@@ -265,7 +342,7 @@ include_once("conexao/banco.php");
         }
 
         function verify(idc) {
-
+            alt_control = 0;
             if (document.getElementById("alterar").style.getPropertyValue("display") !== "block") {
                 if (document.getElementById("excluir").style.getPropertyValue("display") == "block") {
                     cod = $("#campi_excluir input[name=codigocampi_excluir]").val();
@@ -314,6 +391,38 @@ include_once("conexao/banco.php");
 
         }
 
+        function verify_Dep(dep){
+            var x = 0;
+            $.ajax({
+                type: 'post',
+                url: 'fetchDep.php',
+                async: false,
+                data: {
+                    verify: dep
+                },
+                success: function(data) {
+                    x = data;
+                }
+            })
+            return x;
+        }
+
+        function verify_CentroVinculado(dep){
+            var x = 0;
+            $.ajax({
+                type: 'post',
+                url: 'fetchDep.php',
+                async: false,
+                data: {
+                    verify_centro: dep
+                },
+                success: function(data) {
+                    x = data;
+                }
+            })
+            return x;
+        }
+
         function getAbrev(dc) {
             var camp = dc;
             <?php
@@ -324,13 +433,19 @@ include_once("conexao/banco.php");
             if (document.getElementById("alterar").style.getPropertyValue("display") !== "block") {
                 if (document.getElementById("excluir").style.getPropertyValue("display") == "block") {
 
-                    if (cod > <?php echo $num ?> || cod <= 0) {
+                    if (verify_Dep(cod) == 0) {
                         if (dr == 0) {
                             cleanElements();
                             alert("Erro: favor inserir um valor existente para excluir!");
                             dr = 1;
                         }
 
+                    }else if(verify_CentroVinculado(cod) == 1){
+                        if (dr == 0) {
+                            alert("Há um ou mais centro de custos vinculado(s) a este campi, não será possivel realizar a exclusão do mesmo.");
+                            dr = 1;
+                        }
+                        
                     }
                     $.ajax({
                         type: 'post',
@@ -346,7 +461,7 @@ include_once("conexao/banco.php");
                     })
                 } else {
 
-                    if (cod > <?php echo $num ?> || cod <= 0) {
+                    if (verify_Dep(cod) == 0) {
                         $.ajax({
                             type: 'post',
                             url: 'fetchDep.php',
@@ -380,7 +495,7 @@ include_once("conexao/banco.php");
                 }
 
             } else {
-                if (cod > <?php echo $num ?> || cod <= 0) {
+                if (verify_Dep(cod) == 0) {
                     if (dr == 0) {
                         cleanElements();
                         alert("Erro: favor inserir um valor existente para alteração!");
@@ -388,19 +503,23 @@ include_once("conexao/banco.php");
                     }
 
                 }
-                $.ajax({
-                    type: 'post',
-                    url: 'fetchDep.php',
-                    data: {
-                        desc: dc
-                    },
-                    success: function(data) {
-                        $("#abrev_alterar input[name=abrev_alterar]").val(data);
+                if(alt_control == 0){
+                    $.ajax({
+                        type: 'post',
+                        url: 'fetchDep.php',
+                        data: {
+                            desc: dc
+                        },
+                        success: function(data) {
+                            $("#abrev_alterar input[name=abrev_alterar]").val(data);
 
-                        $("#abrev_alterar input[name=abrev_alterar]").attr("disabled", false);
-                        $("#descricao_alterar textarea[name=descricao_alterar]").attr("disabled", false);
-                    }
-                })
+                            $("#abrev_alterar input[name=abrev_alterar]").attr("disabled", false);
+                            $("#descricao_alterar textarea[name=descricao_alterar]").attr("disabled", false);
+                        }
+                    })
+                    alt_control = 1;
+                }
+                
             }
 
         }

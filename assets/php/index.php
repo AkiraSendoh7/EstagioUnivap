@@ -27,10 +27,10 @@ include_once("conexao/banco.php");
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
     <!--==================== CSS ====================-->
-    <link rel="stylesheet" href="/Estagio/assets/css/style.css">
-    <!-- <link rel="stylesheet" href="http://localhost/Estagio/assets/css/card_style.css" /> -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- <link rel="stylesheet" href="http://localhost/Estagio../css/card_style.css" /> -->
 
-    <script src="/Estagio/assets/js/vanilla-masker.js"></script>
+    <script src="../js/vanilla-masker.js"></script>
 
     <!-- Font Awesome CSS Links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
@@ -51,36 +51,43 @@ include_once("conexao/banco.php");
 
                     <li class="nav__item">
                         <a href="#home" class="nav__link active-link">
-                            <i class="bi bi-house nav__icon"></i>
+                            <i class='bx bxs-store nav__icon'></i>
                             Home
                         </a>
                     </li>
 
                     <li class="nav__item">
                         <a href="#about" class="nav__link">
-                            <i class="bi bi-person nav__icon"></i>
+                            <i class='bx bxs-user nav__icon'></i>
                             Sobre-nos
                         </a>
                     </li>
 
                     <li class="nav__item">
                         <a href="#contact" class="nav__link">
-                            <i class="bi bi-chat-left-text nav__icon"></i>
+                            <i class='bx bxs-message-dots nav__icon'></i>
                             Contate
                         </a>
                     </li>
 
                     <li class="nav__item">
                         <a href="centrodecusto.php" class="nav__link">
-                            <i class='bx bx-spreadsheet nav__icon'></i>
+                            <i class='bx bxs-spreadsheet nav__icon'></i>
                             Centro de Custos
                         </a>
                     </li>
 
                     <li class="nav__item">
                         <a href="departamento.php" class="nav__link">
-                            <i class='bx bx-buildings nav__icon'></i>
+                            <i class='bx bxs-buildings nav__icon'></i>
                             Departamentos
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="ordemservico.php" class="nav__link">
+                            <i class='bx bxs-notepad nav__icon'></i>
+                            Ordem de Serviço
                         </a>
                     </li>
 
@@ -88,7 +95,7 @@ include_once("conexao/banco.php");
                         <a class="nav__link">
                             <div class="action">
                                 <div class="profile" onclick="menuToggle()">
-                                    <img src="/Estagio/assets/img/zoro-ashura.jpg" alt="">
+                                    <img src="../img/zoro-ashura.jpg" alt="">
                                 </div>
                                 <div class="menu">
                                     <h3>Usuário não identificado<br>
@@ -146,7 +153,7 @@ include_once("conexao/banco.php");
 
                         <figure class="img-univap" id="img-univap">
                             <a href="https://www.univap.br/home/colegio/portal-educacional/portal-educacional.html" target="_blank" class="home__social-icon">
-                                <img title="Site da Univap" src="/Estagio/assets/img/icone-u.png"" alt=" Ícone da Univap" width="23" height="21">
+                                <img title="Site da Univap" src="../img/icone-u.png"" alt=" Ícone da Univap" width="23" height="21">
                             </a>
                         </figure>
 
@@ -168,7 +175,7 @@ include_once("conexao/banco.php");
                                     165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
                                     129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
                                     -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
-                                <image class="home__blob-img" x='12' y='18' xlink:href="/Estagio/assets/img/icone_personagem.jpg" />
+                                <image class="home__blob-img" x='12' y='18' xlink:href="../img/icone_personagem.jpg" />
                             </g>
                         </svg>
 
@@ -176,7 +183,7 @@ include_once("conexao/banco.php");
                     </div>
 
                     <div class="home__data">
-                        <h1 class="home__title">Centro de custo e departamento</h1>
+                        <h1 class="home__title">Controle de ordem de serviço</h1>
                         <h3 class="home__subtitle">Feito para cadastro dos centros de custos e departamentos</h3>
                         <p class="home__description">
                             Site para manusear e manipular quando é necessário ocorrências e vistorias no departamento
@@ -203,13 +210,11 @@ include_once("conexao/banco.php");
             <h2 class="section__title"> Sobre </h2>
             <span class="section__subtitle">Introdução</span>
             <div class="about__container container grid">
-                <img src="/Estagio/assets/img/icone-u.png" alt="Ícone da Univap" class="about__img">
+                <img src="../img/icone-u.png" alt="Ícone da Univap" class="about__img">
 
                 <div class="about__data">
                     <p class="about__description">
-                        Zoro não passou dois anos treinando sozinho. O Olhos de Falcão pode ter sugerido isso ao
-                        notar a ganância do espadachim por poder. Mihawk fez a cicatriz em Zoro no primeiro
-                        treino dos dois durante o timeskip, como forma de marcar um novo início no caminho de Zoro
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, neque voluptatem veniam, asperiores dolorem accusamus adipisci exercitationem cum esse obcaecati quidem eius. Nobis incidunt at assumenda. Blanditiis distinctio recusandae labore!
                     </p>
                     <div class="about__info">
                         <div>
@@ -246,19 +251,19 @@ include_once("conexao/banco.php");
         <section class="start section" id="start">
             <div class="slider">
                 <div class="slide active">
-                    <img src="/Estagio/assets/img/univap-aquarius.jpg" alt="">
+                    <img src="../img/univap-aquarius.jpg" alt="">
                     <div class="info">
                         <h1 class="start__title" id="aquarius">Unidade Aquarius.</h1>
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="/Estagio/assets/img/univap-centro.jpeg" alt="">
+                    <img src="../img/univap-centro.jpeg" alt="">
                     <div class="info">
                         <h1 class="start__title" id="centro">Unidade Centro.</h1>
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="/Estagio/assets/img/univap-villa-branca.png" alt="">
+                    <img src="../img/univap-villa-branca.png" alt="">
                     <div class="info">
                         <h1 class="start__title" id="villaBranca">Unidade Villa Branca.</h1>
                     </div>
@@ -285,7 +290,7 @@ include_once("conexao/banco.php");
         <section class="contact section" id="contact">
             <div class="container_contact">
                 <span class="big-circle"></span>
-                <img src="/Estagio/assets/img/shape.png" class="square" alt="" />
+                <img src="../img/shape.png" class="square" alt="" />
                 <div class="form_contact">
                     <div class="contact-info">
                         <h3 class="title">Fale conosco</h3>
@@ -448,7 +453,7 @@ include_once("conexao/banco.php");
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!--==================== MAIN JS ====================-->
-    <script src="/Estagio/assets/js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

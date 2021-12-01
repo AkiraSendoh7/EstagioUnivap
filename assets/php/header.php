@@ -35,10 +35,24 @@
         </li>
         <li>
             <a href="departamento.php"">
-                    <i class='bx bx-buildings bx-sm'></i>
-                    <span class=" links_name">Departamentos</span>
+                <i class='bx bx-buildings bx-sm'></i>
+                <span class=" links_name">Departamentos</span>
             </a>
             <span class="tooltip">Departamentos</span>
+        </li>
+        <li>
+            <a href="ordemservico.php">
+                <i class="bx bx-notepad"></i>
+                <span class="links_name">Ordem de Serviço</span>
+            </a>
+            <span class="tooltip">Ordem de Serviço</span>
+        </li>
+        <li>
+            <a href="area.php">
+            <i class='bx bx-clinic'></i>
+                <span class="links_name">Áreas</span>
+            </a>
+            <span class="tooltip">Áreas</span>
         </li>
         <li>
             <a href="#">
